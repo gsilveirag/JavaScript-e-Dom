@@ -11,14 +11,17 @@ function register(ev) {
         alert("As senhas não conferem")
     }
 }
-    function removeEvent() {
+
+const button = document.getElementById("register-button")
+
+button.addEventListener("click", register)
+
+function removeEvent() {
     button.removeEventListener("click", register)
     alert("Event Removed")
 }
-    const button = document.getElementById("register-button")
 
-    button.addEventListener("click", register)
 
-    button.addEventListener("mouseover", function (ev) {
-    console.log(ev)
+button.addEventListener("mouseover", function (ev) {
+    console.log(ev.currentTarget)
 })
